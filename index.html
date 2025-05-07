@@ -18,12 +18,49 @@
 	</head>
 	<body>
 		<!-- Start of Navbar -->
-		<nav>
-			<a class="navbar-brand m-0" href="./index.html">
-			    <img class="img-fluid" id="logo" src="./images/logo.png">
-			</a>
+		<nav id="home" class="py-2 sticky-top">
+			<div class="container-fluid d-flex justify-content-between align-items-center">
+				<a href="./index.html">
+				    <img class="img-fluid" id="logo" src="./images/logo.png">
+				</a>
+
+				<!-- Mobile menu button (hidden on larger screens) -->
+				<input type="checkbox" id="menu-toggle" class="d-none">
+				<label for="menu-toggle" class="menu-button d-lg-none">
+					<span class="menu-line"></span>
+					<span class="menu-line"></span>
+					<span class="menu-line"></span>
+				</label>
+
+				<div class="menu-overlay">
+				    <div class="d-flex flex-row flex-wrap gap-3">
+				    	<div class="dropdown">
+				    	    <input type="checkbox" id="services-toggle" class="d-none">
+				    	    <label for="services-toggle" class="nav-link services-toggle d-flex align-items-center">
+				    	        Services
+				    	        <span class="dropdown-indicator ms-2">+</span>
+				    	    </label>
+				    	    <div class="dropdown-content services-menu">
+				    	        <a href="#booking">Booking</a>
+				    	        <a href="#checkin">Check-in</a>
+				    	        <a href="#manageBooking">Manage Booking</a>
+				    	        <a href="#flightStatus">Flight Status</a>
+				    	    </div>
+				    	</div>
+
+				        <div><a class="nav-link" href="#travelInfo">Travel Info</a></div>
+				        <div><a class="nav-link" href="#about">About</a></div>
+				        <div><a class="nav-link" href="#login">Login</a></div>
+				    </div>
+				</div>
+			</div>
 		</nav>
 		<!-- End of Navbar -->
+
+		your code here
+
+		<!-- Start of Footer -->
+		<!-- End of Footer -->
 
 		<!-- Bootstrap Script -->
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
