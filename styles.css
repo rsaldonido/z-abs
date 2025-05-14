@@ -1,64 +1,146 @@
-/* General Reset and Base Styles */
+/* Smooth scrolling on internal links */
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
 }
 
+/* Base body styles */
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
-  background: #f0f0f0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
-/* Navbar styling */
-nav {
-/*  background-color: #232C64;*/
-  background-color: #2a2a2a;
+/* ----- SLIDESHOW SECTION START ----- */
 
-  position: sticky;
+/* Wrapper for all background slides */
+.slideshow-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+/* Each background slide image */
+.slide {
+  position: absolute;
   top: 0;
-  z-index: 1000;
-  padding: 0.5rem 1rem;
-  font-size: 20px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  animation: fade 9s infinite;
+  z-index: -1;
 }
 
-.container-fluid {
-  padding: 0 1rem;
+/* Individual slide images */
+.slide-1 {
+  background-image: url('./images/slide1.jpg');
+  animation-delay: 0s;
 }
 
-#logo {
-  max-height: 50px;
-  transition: transform 0.3s ease;
+.slide-2 {
+  background-image: url('./images/slide2.jpg');
+  animation-delay: 3s;
 }
 
-#logo:hover {
-  transform: scale(1.05);
+.slide-3 {
+  background-image: url('./images/slide3.jpg');
+  animation-delay: 6s;
 }
 
-/* Navigation links (exclude sub-menu items from underline) */
-.nav-link:not(.services-menu a) {
-  color: white !important; /*font color of nav bar links*/
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  transition: all 0.3s ease;
+/* Fade transition animation for slideshow */
+@keyframes fade {
+  0% { opacity: 0; }
+  8% { opacity: 1; }
+  33.33% { opacity: 1; }
+  41.66% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* Ensure content shows above the background slideshow */
+.slideshow-content {
+  position: relative;
+  z-index: 1;
+  color: white;
+}
+/* ----- SLIDESHOW SECTION END ----- */
+
+
+/* ----- VERTICAL SPACER START ----- */
+.navbar-spacer {
+  height: 2rem;
+}
+/* ----- VERTICAL SPACER END ----- */
+
+
+/* ----- NAVBAR STYLES START ----- */
+
+/* NORMAL NAVBAR START */
+/* Navbar wrapper */
+nav {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, rgba(74, 74, 74, 0.4), rgba(42, 42, 42, 0.4));
+  z-index: 1;
+/*  border-radius: 999px;*/
+}
+
+/* Dropdown container around Services */
+.dropdown {
   position: relative;
 }
 
-.nav-link:hover {
-/*  background-color: rgba(255, 255, 255, 0.1);*/
-  background-color: #ffb400;
+/* Dropdown menu (hidden by default) */
+.dropdown-menu {
+  position: absolute;
+  top: 100%; /* appears directly below parent */
+  left: 0;
+  background: linear-gradient(to right, rgba(74, 74, 74, 0.9), rgba(42, 42, 42, 0.9));
+  border-radius: 10px;
+  padding: 10px 0;
+  white-space: nowrap;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 100;
 }
 
-/* Underline effect (only for main nav items) */
-.nav-link:not(.services-menu a)::after {
-  content: '';
+/* Show dropdown on hover/focus */
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* ----- NAV LINKS & HIGHLIGHT ANIMATION ----- */
+
+/* Shared style for all nav links */
+.nav-link {
+  position: relative;
+  font-size: 23px; /*Nav links font size*/
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  transition: color 0.3s ease, background 0.3s ease;
+  display: inline-block;
+}
+
+/* Animated underline from center on hover */
+.nav-link::after {
+  content: "";
   position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 0;
   height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: white;
+  background: white;
   transition: width 0.3s ease;
 }
 
@@ -66,306 +148,359 @@ nav {
   width: 100%;
 }
 
-/* Mobile menu button */
-.menu-button {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 21px;
-  cursor: pointer;
-  z-index: 1001;
-  transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+/* Semi-white highlight background on hover */
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  width: 100%;
+  color: gold;
 }
 
-.menu-line {
+/* Container around a submenu group (used inside dropdown-menu) */
+.dropdown-subgroup {
+  position: relative;
+}
+
+/* Submenu (dropdown inside a dropdown) */
+.dropdown-submenu {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background: linear-gradient(to right, rgba(74, 74, 74, 0.9), rgba(42, 42, 42, 0.9));
+  border-radius: 10px;
+  padding: 10px 0;
+  white-space: nowrap;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 101;
+}
+
+/* Show nested submenu on hover of parent */
+.dropdown-subgroup:hover .dropdown-submenu {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+/* NORMAL NAVBAR START */
+
+/* ----- MOBILE MENU (HAMBURGER) STYLES START ----- */
+
+/* Hide the checkbox that controls the menu */
+.menu-toggle {
+  display: none;
+}
+
+/* Hamburger menu button - hidden by default on larger screens */
+.hamburger-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+  z-index: 1000;
+  margin-left: auto;
+  margin-right: 15px;
+  align-self: center;
+}
+
+/* Hamburger lines */
+.hamburger-line {
   width: 100%;
   height: 3px;
   background-color: white;
   transition: all 0.3s ease;
-  transform-origin: left center;
+  transform-origin: center;
 }
 
-/* Hamburger spin effect when menu is open */
-#menu-toggle:checked + .menu-button {
-  transform: rotate(180deg);
+/* When menu is checked (open state) */
+.menu-toggle:checked ~ .hamburger-menu .hamburger-line:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
 }
 
-#menu-toggle:checked + .menu-button .menu-line:nth-child(1) {
-  transform: rotate(45deg) translate(3px, -4px);
-}
-
-#menu-toggle:checked + .menu-button .menu-line:nth-child(2) {
+.menu-toggle:checked ~ .hamburger-menu .hamburger-line:nth-child(2) {
   opacity: 0;
 }
 
-#menu-toggle:checked + .menu-button .menu-line:nth-child(3) {
-  transform: rotate(-45deg) translate(2px, 6px);
+.menu-toggle:checked ~ .hamburger-menu .hamburger-line:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
 }
 
-/* ==================== */
-/* MOBILE STYLES (max-width: 991.98px) */
-/* ==================== */
-@media (max-width: 991.98px) {
-  /* Right-side animated mobile menu */
-  .menu-overlay {
-    position: fixed;
-    top: 70px;
-    right: 0;
-    width: auto;
-    height: auto;
-    background-color: #2a2a2a;
-    transform: translateX(100%);
-    opacity: 0;
-    visibility: hidden;
-    z-index: 999;
-    padding: 1rem;
-    border-radius: 8px 0px 0px 8px;
-    transition: 
-      transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
-      opacity 0.3s ease,
-      visibility 0.3s ease;
-    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+/* Rotate the hamburger icon when menu is checked */
+.menu-toggle:checked ~ .hamburger-menu {
+  transform: rotate(180deg);
+}
+
+/* Mobile styles - applies to screens smaller than 992px */
+@media (max-width: 1024px) {
+
+  .full_logo {
+    max-width: 50%;
   }
 
-  #menu-toggle:checked ~ .menu-overlay {
-    transform: translateX(0);
-    opacity: 1;
-    visibility: visible;
-  }
-
-  .menu-overlay > div {
-    flex-direction: column !important;
-    width: 100%;
-    gap: 4px !important;
-    padding: 0 !important;
-  }
-
-  /* Services dropdown */
-  .dropdown {
-    width: 100%;
-  }
-
-  /* Services toggle button */
-  .services-toggle {
+  /* Show hamburger menu */
+  .hamburger-menu {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 16px 20px !important;
-/*    background: rgba(255, 255, 255, 0.05);*/
-    background: #ffb400; /*Services link background color*/
-    border-radius: 8px;
-    margin-bottom: 4px;
-    transition: all 0.3s ease;
-    position: relative;
-  }
-
-  .services-toggle::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: white;
-    transition: width 0.3s ease;
-  }
-
-  .services-toggle:hover::after {
-    width: 100%;
-  }
-
-  #services-toggle:checked ~ .services-toggle {
-    border-radius: 8px 8px 0 0;
-    /*    background: rgba(255, 255, 255, 0.1);*/
-    background: #ffb400;
-  }
-
-  /* Dropdown indicator */
-  .dropdown-indicator {
-    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    font-size: 1.2em;
-  }
-
-  #services-toggle:checked ~ .services-toggle .dropdown-indicator {
-    transform: rotate(45deg);
-  }
-
-  /* Services menu */
-  .services-menu {
-    max-height: 0;
-    overflow: hidden;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.1);
-    border-radius: 0 0 8px 8px;
-    box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.1);
-    opacity: 0;
-    transition: 
-      max-height 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
-      opacity 0.3s ease 0.1s;
-  }
-
-  #services-toggle:checked ~ .services-menu {
-    max-height: 300px;
-    padding: 8px 0;
-    opacity: 1;
-  }
-
-  /* Services menu items (no underline) */
-  .services-menu a {
-    display: block;
-    padding: 14px 24px !important;
-    margin: 0 8px;
-    color: white !important;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-    position: relative;
-    text-decoration: none !important;
-  }
-
-  .services-menu a:hover {
-/*    background: rgba(255, 255, 255, 0.1);*/
-    background: #ffb400;
-    transform: translateX(8px);
-  }
-
-  /* Animated left border effect */
-  .services-menu a::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 3px;
-    background: #4d64d4;
-    transform: scaleY(0);
-    transform-origin: bottom;
-    transition: transform 0.3s ease;
-  }
-
-  .services-menu a:hover::before {
-    transform: scaleY(1);
-  }
-
-  /* Other menu items */
-  .menu-overlay > div > div:not(.dropdown) a {
-    display: block;
-    padding: 16px 20px !important;
-/*    background: rgba(255, 255, 255, 0.05);*/
-    background: #ffb400;
-    border-radius: 8px;
-    margin-bottom: 4px;
-  }
-}
-
-/* ==================== */
-/* DESKTOP STYLES (min-width: 992px) */
-/* ==================== */
-@media (min-width: 992px) {
-  .menu-button {
-    display: none;
   }
   
-  .menu-overlay {
-    display: flex !important;
-    transform: none !important;
-    position: static !important;
-    height: auto !important;
-    background-color: transparent !important;
-    padding: 0 !important;
-  }
-
-  .menu-overlay > div {
-    flex-direction: row !important;
-    gap: 0.5rem !important;
-    width: auto !important;
-    padding: 0 !important;
-  }
-
-  /* Services dropdown */
-  .dropdown {
-    position: relative;
-  }
-
-  .dropdown-indicator {
-    display: none;
-  }
-
-  .services-toggle {
-    position: relative;
-  }
-
-  .services-toggle::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: 0;
+  /* Hide regular nav links by default */
+  .nav-links {
+    position: fixed;
+    top: 0;
     left: 0;
-    background-color: white;
-    transition: width 0.3s ease;
+    width: 100%;
+    height: 100vh;
+    background: rgba(42, 42, 42, 0.95);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 999;
+    margin: 0;
+    padding: 0;
   }
-
-  .services-toggle:hover::after {
+  
+  /* Show nav links when menu is checked */
+  .menu-toggle:checked ~ .nav-links {
+    transform: translateX(0);
+  }
+  
+  /* Adjust dropdown menus for mobile */
+  .dropdown-menu, .dropdown-submenu {
+    position: static;
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+    display: none;
+    background: rgba(74, 74, 74, 0.8);
+    margin-left: 20px;
+  }
+  
+  /* Show dropdown when parent is clicked */
+  .menu-toggle:checked ~ .nav-links .dropdown:focus-within .dropdown-menu,
+  .menu-toggle:checked ~ .nav-links .dropdown-subgroup:focus-within .dropdown-submenu {
+    display: flex;
+  }
+  
+  /* Adjust nav link styles for mobile */
+  .nav-link {
+    font-size: 1.5rem;
+    padding: 15px 0;
+    text-align: center;
     width: 100%;
   }
-
-  .services-menu {
-    position: absolute;
-    top: 102%;
-    left: 0;
-    width: 220px;
-    background: #2a2a2a; /*Background color of sub menu when on desktop screen*/
-    border-radius: 0 0 8px 8px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(10px);
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    padding: 8px 0;
-    z-index: 1000;
-    border-top: 7px solid #4d64d4;
+  
+  /* Remove hover effects on mobile */
+  .nav-link:hover {
+    background: transparent;
+    color: white;
   }
-
-  .dropdown:hover .services-menu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-  }
-
-  /* Services menu items (no underline) */
-  .services-menu a {
-    display: block;
-    padding: 12px 20px !important;
-    margin: 0 8px;
-    color: white !important;
-    border-radius: 4px;
-    transition: all 0.2s ease;
-    text-decoration: none !important;
-  }
-
-  .services-menu a:hover {
-/*    background: rgba(255, 255, 255, 0.1);*/
-    background: #ffb400;
-    transform: translateX(4px);
-  }
-
-  /* Animated left border effect */
-  .services-menu a::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 3px;
-    background: #4d64d4;
-    transform: scaleY(0);
-    transform-origin: bottom;
-    transition: transform 0.2s ease;
-  }
-
-  .services-menu a:hover::before {
-    transform: scaleY(1);
+  
+  .nav-link:hover::after {
+    width: 0;
   }
 }
+/* ----- MOBILE MENU (HAMBURGER) STYLES START ----- */
+
+/* ----- NAVBAR STYLES END ----- */
+
+/* ----- AIRPLANE ANIMATION START ----- */
+.airplane_animation {
+  opacity: 0;
+  width: 100%;
+  height: auto;
+  animation: fadeInAirplane 1.5s ease-in-out forwards;
+  animation-delay: 0.6s;
+}
+
+@keyframes fadeInAirplane {
+  from {
+    opacity: 0;
+    transform: translate(-300px, 40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* ----- AIRPLANE ANIMATION END ----- */
+
+/*.container {
+  margin: 0 !important;
+}*/
+
+
+/*LOGO START*/
+.navbar-brand img {
+  max-height: 60px;
+}
+
+.full_logo {
+    max-width: 35%;
+}
+
+
+/*LOGO END*/
+
+
+/* ----- LANDING LOGO ANIMATION START ----- */
+.full_logo_animation {
+  opacity: 0;
+  transform: scale(0.8) translateY(20px);
+  animation: logoEntrance 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  animation-delay: 0.3s;
+  filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.7));
+}
+
+@keyframes logoEntrance {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+    filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0));
+  }
+  50% {
+    filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.7));
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.3));
+  }
+}
+
+/* ----- LANDING LOGO ANIMATION END ----- */
+
+
+
+/* ===== ANIMATED SLOGAN ===== */
+.slogan_container {
+  position: relative;
+  overflow: hidden;
+}
+
+.slogan {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 300;
+  font-style: italic;
+  color: white;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: 
+    sloganEntrance 0.8s ease-out forwards,
+    sloganGlow 3s ease-in-out infinite alternate;
+  animation-delay: 1.5s; /* Starts after logo animation */
+
+/* Background color and padding */
+/*  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  background-size: 200% 100%;
+  padding: 10px 20px;*/
+
+  border-radius: 30px;
+  display: inline-block;
+}
+
+@keyframes sloganEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+    background-position: 200% 0;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    background-position: -100% 0;
+  }
+}
+
+.slogan2 {
+  margin-top: 2rem;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 300;
+  font-style: italic;
+  color: white;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: 
+    sloganEntrance2 0.8s ease-out forwards,
+    sloganGlow 3s ease-in-out infinite alternate;
+  animation-delay: 1.5s; /* Starts after logo animation */
+
+/* Background color and padding */
+/*  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  background-size: 200% 100%;
+  padding: 10px 20px;*/
+
+  border-radius: 30px;
+  display: inline-block;
+}
+
+@keyframes sloganEntrance2 {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+    background-position: 200% 0;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    background-position: -100% 0;
+  }
+}
+
+@keyframes sloganGlow {
+  from {
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+  }
+  to {
+    text-shadow: 0 0 15px gold, 0 0 25px rgba(255, 215, 0, 0.5);
+  }
+}
+
+
+@media (max-width: 500px) {
+  .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .col-6 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .navbar-spacer {
+    height: 0.5rem;
+  }
+
+  .navbar-brand img {
+    max-height: 20px;
+  }
+
+  .full_logo {
+    max-width: 50%;
+  }
+  .slogan, .slogan2{
+    margin-top: 0.5rem;
+    font-size: 0.7rem;
+  }
+}
+
+
+*/
+/*TESTER START: Comment the contents AND remove the class names from the tags until TESTER END after using */
+/*.airplane, .full_logo {
+  background-color: rgba(255, 0, 0, 0.1); 
+}
+
+.background_tester {
+  background-color: rgba(255, 182, 193, 0.1);
+}*/
+/*TESTER END: Comment after using */
