@@ -77,7 +77,7 @@ Welcome to the Dream Airlines Booking System—a modern, mobile-responsive Singl
 - **Data Models**: TBA.
 - **Database Requirements**: TBA.
 - **Data Storage and Retrieval**: TBA.
-- **ERD**: link TBA.
+- **ERD**: <a href="https://drive.google.com/file/d/1SQGknZQ-QDj3morG5dkWPVc8OHFHgD7v/view?usp=sharing" target="_blank" rel="noopener noreferrer">Click Here</a>
 
 ## 10. External Interface Requirements (TBA)
 - **User Interfaces**: 
