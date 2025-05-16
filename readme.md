@@ -1,59 +1,88 @@
-# Dream Airlines Airline Booking System
+# Technical Specifications Document
 
-![Project Banner](https://via.placeholder.com/1200x400?text=SkyWings+Airline+Booking+System)
+## 1. Title Page
+- **Project Name**: 
+- **Version**: 
+- **Date**: 
+- **Author(s)**: 
 
-## Table of Contents
-1. [Project Overview](#project-overview)
-2. [Features](#features)
-3. [Technical Specifications](#technical-specifications)
-4. [Database ERD](#database-erd)
-5. [Figma Mockups](#figma-mockups)
-6. [Trello Board](#trello-board)
-7. [Installation](#installation)
-8. [API Documentation](#api-documentation)
-9. [Contributing](#contributing)
-10. [License](#license)
+## 2. Table of Contents
+1. [Introduction](#3-introduction)
+2. [Overall Description](#4-overall-description)
+3. [Visual Mockup Reference](#5-visual-mockup-reference)
+4. [Features](#6-features)
+5. [Functional Requirements](#7-functional-requirements)
+6. [Non-Functional Requirements](#8-non-functional-requirements)
+7. [Data Requirements](#9-data-requirements)
+8. [External Interface Requirements](#10-external-interface-requirements)
+9. [Glossary](#11-glossary)
+10. [Appendices](#12-appendices)
 
-## Project Overview
-**Version**: 1.0.0  
-**Last Updated**: June 2024  
-**Authors**: [Your Team Names]  
+## 3. Introduction
+- **Purpose**: Explain the purpose of the application.
+- **Scope**: Define what the application will and will not do.
+- **Definitions, Acronyms, and Abbreviations**: List any terms or acronyms used.
+- **References**: List any documents or sources referenced.
 
-A mobile-responsive Single Page Application for airline bookings inspired by leading airlines like Cebu Pacific, Philippine Airlines, and Singapore Airlines.
+## 4. Overall Description
+- **Product Perspective**: Describe how this application fits into a larger system or context.
+- **Product Functions**: Provide a high-level overview of the main functionalities.
+- **User Classes and Characteristics**: Describe the different types of users.
+- **Operating Environment**: Specify the hardware, software, and network environment.
+- **Assumptions and Dependencies**: List any assumptions made and dependencies on other projects or technologies.
 
-## Features
+## 5. Visual Mockup Reference
+- **Link or Screenshot**: Provide a link to the visual mockup or include a screenshot.
 
-### Frontend
-- 🛫 Flight search with filters (price, duration, stops)
-- 📱 Fully responsive design (mobile-first)
-- 🔐 User authentication (login/register)
-- 🛄 Booking management
-- 📅 Itinerary viewer
-- ✈️ Interactive seat selection
+## 6. Features
+- **Feature 1**: Description
+- **Feature 2**: Description
+- **Feature 3**: Description
+- (Add more features as necessary)
 
-### Backend
-- 🚀 RESTful API with Node.js/Express
-- 🔒 JWT authentication
-- 💳 Payment processing integration
-- 📧 Email notifications
-- 📊 Admin dashboard
+## 7. Functional Requirements
+### Use Cases
+- **Use Case 1**:
+  - **Title**: 
+  - **Description**: 
+  - **Actors**: 
+  - **Preconditions**: 
+  - **Postconditions**: 
+  - **Main Flow**: 
+  - **Alternate Flows**: 
 
-## Technical Specifications
+### System Features
+- **Feature 1**:
+  - **Description**: 
+  - **Priority**: 
+  - **Inputs**: 
+  - **Processing**: 
+  - **Outputs**: 
+  - **Error Handling**: 
 
-### Tech Stack
-| Component       | Technology          |
-|----------------|--------------------|
-| Frontend       | React, Redux, Tailwind CSS |
-| Backend        | Node.js, Express   |
-| Database       | MongoDB            |
-| Authentication | JWT                |
-| Deployment     | Docker, AWS        |
+## 8. Non-Functional Requirements
+- **Performance**: Describe performance requirements.
+- **Security**: Outline security needs.
+- **Usability**: Detail user interface and experience considerations.
+- **Reliability**: Define reliability and availability requirements.
+- **Supportability**: Specify maintenance and support requirements.
 
-### Functional Requirements
-```text
-FR1: User Registration/Login
-FR2: Flight Search with Filters
-FR3: Booking Management
-FR4: Payment Processing
-FR5: Email Notifications
-FR6: Admin Dashboard
+## 9. Data Requirements
+- **Data Models**: Include simple diagrams if possible.
+- **Database Requirements**: Describe tables and relationships.
+- **Data Storage and Retrieval**: Explain how data will be stored and accessed.
+- **ERD**: Add the ERD for the database models based on Specifications.
+
+## 10. External Interface Requirements
+- **User Interfaces**: Provide sketches or descriptions of the user interface.
+- **API Interfaces**: Briefly describe any APIs.
+- **Hardware Interfaces**: Mention any required hardware interactions.
+- **Software Interfaces**: Note any software interactions.
+
+## 11. Glossary
+- **Term 1**: Definition
+- **Term 2**: Definition
+
+## 12. Appendices
+- **Supporting Information**: Add any additional information here.
+- **Revision History**: Record any changes made to the document with dates and descriptions.
