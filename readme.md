@@ -90,6 +90,6 @@ Welcome to the Dream Airlines Booking System—a modern, mobile-responsive Singl
 - **JWT**: JSON Web Token for authentication.
 
 ## 12. Appendices
-- **Trello Board**: link TBA.
+- **Trello Board**: https://trello.com/b/rNZOMshn/dream-airlines
 - **Revision History**: 
   **v1.0.0** (May 2025): Initial draft.
