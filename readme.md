@@ -5,10 +5,10 @@
 - **Version**: 1.0.0
 - **Date**: May 2025
 - **Authors**: 
-      > Saldonido, Randolf
-      > Sahirani, Kenon
-      > Tolentino, Jared Adrielle
-      > Diwata, Emmanuel
+      - **Saldonido, Randolf**
+      - **Sahirani, Kenon**
+      - **Tolentino, Jared Adrielle**
+      - **Diwata, Emmanuel**
 
 ## Table of Contents
 1. [Introduction](#1-introduction)
