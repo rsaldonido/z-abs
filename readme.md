@@ -1,10 +1,14 @@
 # Technical Specifications Document
 
 ## 1. Title Page
-- **Project Name**: 
-- **Version**: 
-- **Date**: 
-- **Author(s)**: 
+- **Project Name**: Dream Airlines Booking System
+- **Version**: 1.0.0
+- **Date**: May 2025
+- **Authors**: 
+      > Saldonido, Randolf
+      > Sahirani, Kenon
+      > Tolentino, Jared Adrielle
+      > Diwata, Emmanuel
 
 ## 2. Table of Contents
 1. [Introduction](#3-introduction)
@@ -19,7 +23,8 @@
 10. [Appendices](#12-appendices)
 
 ## 3. Introduction
-- **Purpose**: Explain the purpose of the application.
+Welcome to the SkyHigh Airlines Booking System—a high-performance, scalable, and user-friendly platform designed to streamline flight reservations, manage bookings, and enhance customer experience. Built with modern architecture and cutting-edge technologies, this system ensures reliability, speed, and seamless integration with airline operations.
+
 - **Scope**: Define what the application will and will not do.
 - **Definitions, Acronyms, and Abbreviations**: List any terms or acronyms used.
 - **References**: List any documents or sources referenced.
