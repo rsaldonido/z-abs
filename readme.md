@@ -1,6 +1,6 @@
 # Technical Specifications Document
 
-## 1. Title Page
+## Title Page
 - **Project Name**: Dream Airlines Booking System
 - **Version**: 1.0.0
 - **Date**: May 2025
@@ -10,11 +10,11 @@
       > Tolentino, Jared Adrielle
       > Diwata, Emmanuel
 
-## 2. Table of Contents
-1. [Introduction](#3-introduction)
-2. [Overall Description](#4-overall-description)
-3. [Visual Mockup Reference](#5-visual-mockup-reference)
-4. [Features](#6-features)
+## Table of Contents
+1. [Introduction](#1-introduction)
+2. [Overall Description](#2-overall-description)
+3. [Visual Mockup Reference](#3-visual-mockup-reference)
+4. [Features](#4-features)
 5. [Functional Requirements](#7-functional-requirements)
 6. [Non-Functional Requirements](#8-non-functional-requirements)
 7. [Data Requirements](#9-data-requirements)
@@ -22,72 +22,75 @@
 9. [Glossary](#11-glossary)
 10. [Appendices](#12-appendices)
 
-## 3. Introduction
-Welcome to the SkyHigh Airlines Booking System—a high-performance, scalable, and user-friendly platform designed to streamline flight reservations, manage bookings, and enhance customer experience. Built with modern architecture and cutting-edge technologies, this system ensures reliability, speed, and seamless integration with airline operations.
+## 1. Introduction
+Welcome to the Dream Airlines Booking System—a modern, mobile-responsive Single Page Application (SPA) designed to streamline flight bookings, enhance user experience, and integrate seamlessly with airline operations.
 
-- **Scope**: Define what the application will and will not do.
-- **Definitions, Acronyms, and Abbreviations**: List any terms or acronyms used.
-- **References**: List any documents or sources referenced.
+- **Scope**:
+  **Included**: Flight search, booking management, user authentication, payment processing, and admin controls.
+  **Excluded**: In-flight services (e.g., meal selection), loyalty programs, or third-party hotel/car rentals.
 
-## 4. Overall Description
-- **Product Perspective**: Describe how this application fits into a larger system or context.
-- **Product Functions**: Provide a high-level overview of the main functionalities.
-- **User Classes and Characteristics**: Describe the different types of users.
-- **Operating Environment**: Specify the hardware, software, and network environment.
-- **Assumptions and Dependencies**: List any assumptions made and dependencies on other projects or technologies.
+- **Definitions, Acronyms, and Abbreviations**:
+  **SPA**: Single Page Application
+  **ERD**: Entity-Relationship Diagram
+  **API**: Application Programming Interface
 
-## 5. Visual Mockup Reference
-- **Link or Screenshot**: Provide a link to the visual mockup or include a screenshot.
+- **References**: Cebu Pacific, Philippine Airlines, Singapore Airlines for UI / UX inspiration.
 
-## 6. Features
-- **Feature 1**: Description
-- **Feature 2**: Description
-- **Feature 3**: Description
-- (Add more features as necessary)
+## 2. Overall Description
+- **Product Perspective**: Standalone web application with future API integration for airline partners.
+- **Product Functions**: Real-time flight search, multi-step booking, secure payments, and email/SMS notifications.
+- **User Classes and Characteristics**:
+  1. **Customers**: Book flights, view itineraries.
+  2. **Employees**: Manage flights, view itineraries and analytics.
+  3. **Admins**: Manage flights, users, and analytics.
+- **Operating Environment**:
+  **Frontend**: HTML and CSS
+  **Backend**: Node.js/Express
+  **Database**: MongoDB
+- **Assumptions and Dependencies**: TBA.
+
+## 3. Visual Mockup Reference
+- **Link or Screenshot**: TBA.
+
+## 4. Features
+- **1**. **User Authentication**: Login/logout with JWT.
+- **2**: **Flight Search**: Filters (date, destination, price).
+- **3**: **Dynamic Booking**: Seat selection, passenger details.
+- **4**: **Admin Dashboard**: CRUD operations for flights/users.
+- **5**: **Payment Gateway**: TBA
 
 ## 7. Functional Requirements
 ### Use Cases
-- **Use Case 1**:
-  - **Title**: 
-  - **Description**: 
-  - **Actors**: 
-  - **Preconditions**: 
-  - **Postconditions**: 
-  - **Main Flow**: 
-  - **Alternate Flows**: 
-
-### System Features
-- **Feature 1**:
-  - **Description**: 
-  - **Priority**: 
-  - **Inputs**: 
-  - **Processing**: 
-  - **Outputs**: 
-  - **Error Handling**: 
+- **Use Case 1**: Flight Booking
+  - **Title**: Book a Flight
+  - **Actors**: Traveler
+  - **Preconditions**: User is logged in
+  - **Main Flow**: Search → Select → Pay → Receive e-ticket.
 
 ## 8. Non-Functional Requirements
-- **Performance**: Describe performance requirements.
-- **Security**: Outline security needs.
-- **Usability**: Detail user interface and experience considerations.
-- **Reliability**: Define reliability and availability requirements.
+- **Performance**: 2 seconds response time for search queries.
+- **Security**: TBA.
+- **Usability**: Responsive, mobile-first design.
+- **Reliability**: 98% uptime.
 - **Supportability**: Specify maintenance and support requirements.
 
 ## 9. Data Requirements
-- **Data Models**: Include simple diagrams if possible.
-- **Database Requirements**: Describe tables and relationships.
-- **Data Storage and Retrieval**: Explain how data will be stored and accessed.
-- **ERD**: Add the ERD for the database models based on Specifications.
+- **Data Models**: TBA.
+- **Database Requirements**: TBA.
+- **Data Storage and Retrieval**: TBA.
+- **ERD**: link TBA.
 
-## 10. External Interface Requirements
-- **User Interfaces**: Provide sketches or descriptions of the user interface.
-- **API Interfaces**: Briefly describe any APIs.
-- **Hardware Interfaces**: Mention any required hardware interactions.
-- **Software Interfaces**: Note any software interactions.
+## 10. External Interface Requirements (TBA)
+- **User Interfaces**: 
+- **API Interfaces**:
+- **Hardware Interfaces**: 
+- **Software Interfaces**: 
 
 ## 11. Glossary
-- **Term 1**: Definition
-- **Term 2**: Definition
+- **CRUD**: Create, Read, Update, Delete.
+- **JWT**: JSON Web Token for authentication.
 
 ## 12. Appendices
-- **Supporting Information**: Add any additional information here.
-- **Revision History**: Record any changes made to the document with dates and descriptions.
+- **Trello Board**: link TBA.
+- **Revision History**: 
+  **v1.0.0** (May 2025): Initial draft.
