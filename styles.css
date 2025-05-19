@@ -1,3 +1,4 @@
+/* MBR 1 START */
 /* Smooth scrolling on internal links */
 html {
   scroll-behavior: smooth;
@@ -810,3 +811,268 @@ body {
   filter: brightness(1.1) drop-shadow(0 0 15px gold);
   transform: scale(1.1);
 }
+/*MBR 1 END*/
+
+
+
+
+
+
+
+
+/*MBR 3 START*/
+
+/* Featured Destinations Styles */
+.featured-destinations {
+    background-color: #f8f9fa;
+}
+
+.section-heading h2 {
+    color: #2b5876;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.heading-underline {
+    height: 3px;
+    width: 70px;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    margin: 0.5rem auto 1rem;
+}
+
+.destination-card {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background: #FFB400;
+    display: flex;
+    flex-direction: column;
+}
+
+.destination-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.destination-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.destination-image img {
+    transition: transform 0.5s ease;
+    height: 100%;
+    width: 100%;
+}
+
+.destination-card:hover .destination-image img {
+    transform: scale(1.1);
+}
+
+.destination-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.6));
+}
+
+.destination-price {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.destination-details {
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.destination-details h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: black;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.destination-meta {
+    display: flex;
+    justify-content: space-between;
+    color: black;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.destination-description {
+    flex: 1;
+    margin-bottom: 1rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Explore Now button styles */
+.btn-explore {
+    background-color: #2b5876;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-explore:hover {
+    background-color: #1a3a52;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* View All Destinations Button styles */
+.btn-booking {
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    border: none;
+    border-radius: 25px;
+    padding: 8px 20px;
+    color: white;
+    font-weight: 600;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.btn-booking:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(to right, #feb47b, #ff7e5f);
+}
+/* End of Featured Destinations Styles */
+
+/* Footer Styles */
+.footer {
+    background: linear-gradient(135deg, #000000 0%, #434343 100%);
+    color: white;
+}
+
+.footer-logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: white;
+}
+
+.footer-about {
+    margin: 15px 0;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.social-links {
+    display: flex;
+}
+
+.social-link {
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    color: white;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-link:hover {
+    background: white;
+    color: #434343;
+    transform: translateY(-3px);
+}
+
+.footer-heading {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-heading::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 2px;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    padding-left: 15px;
+}
+
+.footer-links a::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: white;
+    padding-left: 20px;
+}
+
+.footer-links a:hover::before {
+    left: 5px;
+}
+
+.footer-contact {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-contact li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.footer-contact li i {
+    margin-right: 10px;
+    color: #ff7e5f;
+}
+
+.copyright-bar {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9rem;
+}
+/* Footer Styles */
+
+/*MBR 3 END*/
